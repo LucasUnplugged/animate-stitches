@@ -1,6 +1,6 @@
 {
   "name": "animate-stitches",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Library for bringing Animate.css animations to Stitches (CSS-in-JS).",
   "main": "build/index.js",
   "module": "build/index.es.js",

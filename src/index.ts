@@ -1,5 +1,11 @@
-import { Animate, AnimationOptions, AnimationStyles, TimingFuctionValues } from "./models"
-import * as animations from "./"
+import {
+  Animate,
+  AnimationOptions,
+  AnimationStyles,
+  Keyframes,
+  TimingFuctionValues,
+} from "./models"
+import * as animations from "./animations"
 
 const isNumber = (n: number | string) => !isNaN(+n)
 const getTime = (time: number | string): string => (isNumber(time) ? `${time}s` : String(time))
@@ -28,10 +34,10 @@ const getAnimationStyles =
 
 export const getAnimations = <T extends object, O extends Function>(keyframes: O) =>
   Object.entries(animations).reduce<Animate>(
-    (output: Animate, [key, animation]: [string, (keyframes: O) => unknown]): Animate => {
+    (output: Partial<Animate>, [key, animation]: [string, Keyframes]): Animate => {
       const target = keyframes(animation as T)
       output[key] = getAnimationStyles(target.toString())
-      return output
+      return output as Animate
     },
     {} as Animate
   )

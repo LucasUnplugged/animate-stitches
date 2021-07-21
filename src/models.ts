@@ -141,3 +141,5 @@ export type Animate = {
     options?: AnimationOptions
   ) => AnimationStyles
 }
+
+export type Keyframes = { [k: string]: unknown }
