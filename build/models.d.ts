@@ -31,4 +31,7 @@ export interface AnimationStyles {
 export declare type Animate = {
     [k in NamesAnimation]: (duration: number | string, timingFunction?: TimingFuctionValues | string, options?: AnimationOptions) => AnimationStyles;
 };
+export declare type Keyframes = {
+    [k: string]: unknown;
+};
 export {};
