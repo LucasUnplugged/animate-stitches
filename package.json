@@ -1,0 +1,40 @@
+{
+  "name": "animate-stitches",
+  "version": "1.0.0",
+  "description": "Library for bringing Animate.css animations to Stitches (CSS-in-JS).",
+  "main": "build/index.js",
+  "module": "build/index.es.js",
+  "jsnext:main": "build/index.es.js",
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "rollup": "2.39.1",
+    "rollup-plugin-commonjs": "10.1.0",
+    "rollup-plugin-node-resolve": "5.2.0",
+    "rollup-plugin-peer-deps-external": "2.2.4",
+    "rollup-plugin-typescript2": "0.30.0",
+    "typescript": "4.1.5"
+  },
+  "author": "Lucas Castro <lucas.castro@gmail.com> (https://lucasunplugged.com/)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LucasUnplugged/animate-stitches.git"
+  },
+  "bugs": {
+    "url": "https://github.com/LucasUnplugged/animate-stitches.git/issues"
+  },
+  "homepage": "https://github.com/LucasUnplugged/animate-stitches.git/#readme",
+  "license": "MIT",
+  "keywords": [
+    "stitches",
+    "css-in-js",
+    "css",
+    "animation",
+    "animate"
+  ]
+}
