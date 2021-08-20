@@ -1,2 +1,2 @@
-import { Animate } from "./models";
-export declare const getAnimations: <T extends object, O extends Function>(keyframes: O) => Animate;
+import { Animate, Keyframes } from "./models";
+export declare const getAnimations: <T extends Keyframes, O extends Function>(keyframes: O) => Animate;

@@ -32,7 +32,7 @@ const getAnimationStyles =
     }
   }
 
-export const getAnimations = <T extends object, O extends Function>(keyframes: O) =>
+export const getAnimations = <T extends Keyframes, O extends Function>(keyframes: O) =>
   Object.entries(animations).reduce<Animate>(
     (output: Partial<Animate>, [key, animation]: [string, Keyframes]): Animate => {
       const target = keyframes(animation as T)
