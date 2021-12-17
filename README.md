@@ -1,6 +1,6 @@
 # animate-stitches
 
-Library for bringing Animate.css animations to Stitches (CSS-in-JS).
+Library for bringing Animate.css animations to Stitches (CSS-in-JS library with near-zero runtime).
 
 ## Installation
 
@@ -20,8 +20,16 @@ Simply add the following to your `stitches.config.ts` file:
 
 ```TS
 import { getAnimations } from "animate-stitches"
-...
-export const animate = getAnimations<{ [k: string]: FlatInternalCSS }, typeof keyframes>(keyframes)
+import type * as S from "@stitches/react"
+
+// Make sure you destructure `config` from your base theme creation
+export const { config, ... } = createStitches({ ... })
+
+// As per the Stitches docs, create a `CSS` type
+export type CSS = S.CSS<typeof config>
+
+// Then bring it all together and export the `animate` helper object
+export const animate = getAnimations<{ [k: string]: CSS }, typeof keyframes>(keyframes)
 ```
 
 ## Usage
@@ -38,6 +46,6 @@ const Button = styled("button", {
 })
 ```
 
-## Prior Work
+## Prior Art
 
 This library is derived from, and inspired by, [animate-styled](https://github.com/CarlosManotas/animate-styled), by Carlos Manotas.
